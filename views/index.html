@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Admin</title>
+<meta name="author" content="Arjun Wadhwa"/>
+<meta name="viewport" content=" width=device-width, initial-scale=1.0"/>
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,200,500,700' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="mainContainer">
+		<div class="screen">
+
+			<!--header-->
+			<div class="header">
+				<div class="welcome">
+					Welcome, Arjun 
+				</div>
+				<div class="brand">
+					<img src="../images/logo.png" width="300px">
+				</div>
+			</div>
+			<!--header End-->
+				<div class="customerType" align="center">
+					<img src="../images/logo.png" width="350px">
+					<div class="welcomeText"> Welcome to Food Mall</div>
+					<button type="submit"><div class="text1 existingAcct">Existing Account</div></button>
+					<button type="submit"><div class="text1 newAcct">New Account</div></button>
+				</div>
+
+			<!-- Entry form-->
+			<div class="formFirst ">
+				<input type="text" placeholder="Name"></input>
+				<input type="text" placeholder="ID"></input>
+				<input type="text" placeholder="Email"></input>
+				<input type="text" placeholder="Contact"></input>
+				<button type="submit"><div class="text">Next</div></button>
+			</div>
+			<div class="formSecond ">
+				<input type="text" placeholder="ID"></input>
+				<button type="submit"><div class="text">Next</div></button>
+			</div>
+			<!-- Entry form End-->
+
+			<!-- Add Order Slide -->
+			<div class="addOrder">
+				
+					<div class="list col-md-2">
+						<div class="row category">
+							<div class="item breakfast">
+							 <img src="../images/arrow.png" width="15px" style="margin-bottom:5px">
+							Breakfast
+							</div>
+							<div class="item milkShakes">
+							<img src="../images/arrow.png" width="15px" style="margin-bottom:5px">
+							Milk Shakes
+							</div>
+							<div class="item beverages">
+							<img src="../images/arrow.png" width="15px" style="margin-bottom:5px">
+								Beverages
+							</div>
+							<div class="item southIndian">
+							<img src="../images/arrow.png" width="15px" style="margin-bottom:5px">
+								South Indian
+							</div>
+							<div class="item chinese">
+							<img src="../images/arrow.png" width="15px" style="margin-bottom:5px">
+								Chinese
+							</div>
+							<div class="item">
+							<img src="../images/arrow.png" width="15px" style="margin-bottom:5px">
+								Milk Shakes
+							</div>
+							<div class="item vegStarters">
+							<img src="../images/arrow.png" width="15px" style="margin-bottom:5px">
+								Veg Starters
+							</div>
+							<div class="item">
+							<img src="../images/arrow.png" width="15px" style="margin-bottom:5px">
+								Non-Veg Starters
+							</div>
+							<div class="item">
+							<img src="../images/arrow.png" width="15px" style="margin-bottom:5px">
+								Veg Curry
+							</div>
+							<div class="item">
+							<img src="../images/arrow.png" width="15px" style="margin-bottom:5px">
+								Non-Veg Curry
+							</div>
+							<div class="item">
+							<img src="../images/arrow.png" width="15px" style="margin-bottom:5px">
+								Breads
+							</div>
+
+						</div>
+					</div>
+					<div class="items col-md-7">
+					</div>
+					<div class="bill col-md-3">
+						<div  class="coffee"><img src="../images/coffee.png" width="60px">
+						</div>
+						<div class="billHeading">
+							On Your Plate</div>
+							<div class="row billDetailsHead">
+								<div class="col-md-7">Item</div>
+								<div class="col-md-2">Qty</div>
+								<div class="col-md-3">Price</div>
+							</div>
+							<div class="billDetails">
+							</div>
+							<div class="printButton"><button type="submit"><div class="text">Print Receipt</div></button></div>
+							<div class=" row billSummary">
+								<div class="col-md-9"><span style="font-size:24px">Grand Total</span></div>
+								<div class="col-md-3 totalAmount"></div>
+							</div>
+					</div>
+			</div>
+			<div class="proceedButton"><button type="submit"><div class="text">Proceed</div></button></div>
+			<!-- Add Order Slide End-->
+			<div>
+				<div class="note">Order Successful!
+					<div class="homeButton"><button type="submit"><div class="text">Home</div></button></div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</body>
+
+<script id="menuItems" type="text/x-jquery-tmpl">
+		{{if (foodItems.menu==1)}}
+			{{each(oIndex, o) foodItems.breakfast}}
+				<div class="col-md-3 itemDetail" style="background-image:url(${location})">
+						<div class="name">${name}</div>
+						<div class="price">${price}</div>
+						<div class="circle"></div>
+				</div>
+			{{/each}}
+		{{else}}
+		{{if (foodItems.menu==2)}}
+			{{each(oIndex, o) foodItems.milkShakes}}
+				<div class="col-md-3 itemDetail" style="background-image:url(${location})">
+						<div class="name">${name}</div>
+						<div class="price">${price}</div>
+						<div class="circle"></div>
+				</div>
+			{{/each}}
+		{{else}}
+		{{if (foodItems.menu==3)}}
+			{{each(oIndex, o) foodItems.beverages}}
+				<div class="col-md-3 itemDetail" style="background-image:url(${location})">
+						<div class="name">${name}</div>
+						<div class="price">${price}</div>
+						<div class="circle"></div>
+				</div>
+			{{/each}}
+		{{else}}
+		{{if (foodItems.menu==4)}}
+			{{each(oIndex, o) foodItems.southIndian}}
+				<div class="col-md-3 itemDetail" style="background-image:url(${location})">
+						<div class="name">${name}</div>
+						<div class="price">${price}</div>
+						<div class="circle"></div>
+				</div>
+			{{/each}}
+		{{else}}
+		{{if (foodItems.menu==5)}}
+			{{each(oIndex, o) foodItems.chinese}}
+				<div class="col-md-3 itemDetail" style="background-image:url(${location})">
+						<div class="name">${name}</div>
+						<div class="price">${price}</div>
+						<div class="circle"></div>
+				</div>
+			{{/each}}
+		{{else}}
+		{{if (foodItems.menu==6)}}
+			{{each(oIndex, o) foodItems.vegStarters}}
+				<div class="col-md-3 itemDetail" style="background-image:url(${location})">
+						<div class="name">${name}</div>
+						<div class="price">${price}</div>
+						<div class="circle"></div>
+				</div>
+			{{/each}}
+
+		{{/if}} {{/if}} {{/if}} {{/if}} {{/if}} {{/if}}
+</script>
+<script id="bill" type="text/x-jquery-tmpl">
+		<div class="col-md-7">${foodItems.itemName}</div>
+		<div class="col-md-2">1</div>
+		<div class="col-md-3">${foodItems.itemPrice}</div>
+</script>
+<script id="total" type="text/x-jquery-tmpl">
+<span style="font-size:24px">₹${foodItems.total}</span>
+</script>
+<script src="../scripts/jquery.js"></script>
+<script src="../scripts/bootstrap.min.js"></script>
+<script src="../scripts/jquery.tmpl.min.js"></script>
+<script src="../scripts/jslinq.js"></script>
+<script src="../scripts/tocca.min.js"></script>
+<script src="../js/base.js"></script>
+<script src="../js/default.js"></script>
+</html>
